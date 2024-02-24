@@ -1,0 +1,167 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:ui="sap.ui.unified"
+    xmlns:upload="sap.m.upload"
+	xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormDisplay480_Trial"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="true" >
+			<f:content>
+				
+				<core:Title />
+                
+				<Label text="Shipment Readiness Date" />
+				<Text text="{objectModel>/Ship_ReadDate}" />
+				<Label text="Address of Origin Location" />
+				<Text text="{objectModel>/Origin_address}" />
+				<Label text="Country" />
+				
+				<Text text="{objectModel>/Address_country}" />
+				<Label text="Type of Packaging" />
+				
+                <VBox id="dynamicFieldsContainer1" items="{objectModel>/Packing_Type/}">
+                    <items >
+                        <Text text="{objectModel>}" />
+                        
+                    </items>
+                </VBox>
+				<Label text="PO INCOTERMS" />
+				<Text text="{objectModel>/PO_Inco_Terms}" />
+				<Label text="Actual INCOTERMS" />
+				<Text text="{objectModel>/Act_Incoterms}" />
+				
+
+				<core:Title />
+                <Label text="Name of Load Port" />
+				<Text text="{objectModel>/TypeOfLoadPort}" />
+				<Label text="Name of Discharge Port" />
+				<Text text="{objectModel>/NameOfDisPort}" />
+				<Label text="Type of Vehicle at Load port"></Label>				
+                <VBox id="dynamicFieldsContainer" items="{objectModel>/TypeOfVehicle/}">
+                    <items >
+                        <Text text="{objectModel>}" />
+                        
+                    </items>
+                </VBox>
+				<Label text="Type of Shipment" visible="{= ${objectModel>/Contanarised}==='Non Containerised'?true:false}"/>
+				<Text text="{objectModel>/Contanarised}" visible="{= ${objectModel>/Contanarised}==='Non Containerised'?true:false}" />
+                <Label text="Contact Person" />
+				<Text text="{objectModel>/Ship_Cont_Name}" />
+                <Label text="Email Address" />
+				<Text text="{objectModel>/Ship_Email_ID}" />
+                <Label text="Contact Name" />
+				<Text text="{objectModel>/Ship_Cont_Name}" />
+                <Label text="Contact Number" />
+				<Text text="{objectModel>/Ship_Country_code} {objectModel>/Ship_Cont_No}" />
+                <Label text="Name of Discharge Port" />
+				<Text text="{objectModel>/NameOfDisPort}" />
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+    <Table visible="{= ${objectModel>/Contanarised}==='Containerised'?true:false}" width="50%">
+			<headerToolbar>
+                    <OverflowToolbar>
+                        <Title
+                            
+                            text="Type of Shipment:Containarised"
+                            level="H4"
+                        />
+					</OverflowToolbar>
+				</headerToolbar>
+    <columns>
+        <Column>
+            <Text text="Type" />
+        </Column>
+        <Column hAlign="Center">
+            <Text text="20' Numbers" />
+        </Column>
+		<Column hAlign="Center">
+            <Text text="40' Numbers" />
+        </Column>
+    </columns>
+    <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="High Cube" />
+                <Text text="{objectModel>/C20_HighCube}" />
+				<Text text="{objectModel>/C40_HighCube}" />
+            </cells>
+        </ColumnListItem>
+        <ColumnListItem>
+            <cells>
+                <Text text="Flat Rack" />
+                <Text text="{objectModel>/C20_FlatRack}" />
+				<Text text="{objectModel>/C40_FlatRack}" />
+            </cells>
+        </ColumnListItem>
+		<ColumnListItem>
+            <cells>
+                <Text text="Open Top" />
+                <Text text="{objectModel>/C20_OpenTop}" />
+				<Text text="{objectModel>/C40_OpenTop}" />
+            </cells>
+        </ColumnListItem>
+		<ColumnListItem>
+            <cells>
+                <Text text="General Purpose" />
+                <Text text="{objectModel>/C20_GeneralPurpose}" />
+				<Text text="{objectModel>/C40_GeneralPurpose}" />
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table>
+    <Panel class="sapUiSmallMarginTop">
+        <Label
+            class="sapUiSmallMargin"
+            text="Packing Documents"
+            required="true"
+            design="Bold"
+        />
+        
+        <upload:UploadSet
+            id="ref_pack_photo"
+            uploadButtonInvisible="true"
+            mode="None"
+            instantUpload="false"
+            afterItemAdded="onAfterItemAdded"
+            uploadCompleted="onUploadCompleted"
+            uploadUrl="/Adani_Logistics_Packing_Doc/"
+            items="{
+								path: 'objectModel>/To_PackingDoc/',								templateShareable: false}"
+        >
+            <!-- <upload:toolbar /> -->
+            <upload:items>
+                <upload:UploadSetItem
+                    fileName="{objectModel>fileName}"
+                    visibleRemove="false"
+                    mediaType="{objectModel>mediaType}"
+                    url="{objectModel>url}"
+                    enabledEdit="false"
+                    visibleEdit="false"
+                    openPressed="onOpenPressed"
+                    removePressed="onRemovePressed"
+                >
+                    
+                </upload:UploadSetItem>
+            </upload:items>
+        </upload:UploadSet>
+    </Panel>
+
+</core:FragmentDefinition>

@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "db1",
+            "database": "${workspaceFolder:projects}/MyHANAApp/db.sqlite"
+        }
+    ],
+    "SAP HANA Project Explorer.bind.confirm automatic undeployment": false,
+    "SAP HANA Project Explorer.bind.confirm existing service": false,
+    "cds.trace.level": "verbose"
+}

@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <SelectDialog
+        confirmButtonText="Assign"
+        noDataText="No Records Found"
+        title="Select Email ID for LRF-{modelAssignEmail>/Lrf_No}"
+        liveChange="_handleValueHelpSearchFF"
+        search="_handleValueHelpSearchFF"
+        confirm="_handleValueHelpConfirmFF"
+        cancel="_handleValueHelpClose"
+        items="{
+												path: 'EmailModel>/Users/'
+											}"
+    >
+        <StandardListItem
+            title="{EmailModel>Email}"
+            type="Active"
+        />
+        
+    </SelectDialog>
+</core:FragmentDefinition>

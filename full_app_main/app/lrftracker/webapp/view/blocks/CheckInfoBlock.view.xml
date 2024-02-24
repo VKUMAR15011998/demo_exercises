@@ -1,0 +1,54 @@
+<mvc:View
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:forms="sap.ui.layout.form"
+        xmlns:ui="sap.ui.unified"
+        xmlns:upload="sap.m.upload"
+		xmlns="sap.m">
+
+	
+    <Panel class="sapUiSmallMarginTop" >
+        <VBox >
+        <HBox >
+        <VBox >
+        <Label class="sapUiSmallMargin" text="check_1-Transportation/ GA drawing In case of over dimensional/ over weight cargo:{objectModel>/Check1}" design="Bold" />
+        <Label class="sapUiSmallMargin" text="check_2-Contents are dangerous goods as per IATA DGR / Hazardous as per _____XXXXXX:{objectModel>/Check2}"  design="Bold" />
+        <Label class="sapUiSmallMargin" text="check_3-MSDS sheet in case of DGR/Hazardous cargo:{objectModel>/Check3}"  design="Bold" />
+        </VBox>
+        <upload:UploadSet id="ref_pack_photo" mode="None" instantUpload="false" uploadButtonInvisible="true" afterItemAdded="onAfterItemAdded" uploadCompleted="onUploadCompleted" uploadUrl="/Adani_Logistics_Packing_Doc/"  items="{
+								path: 'objectModel>/To_CkeckList/',								templateShareable: false}">
+            <upload:toolbar>
+            </upload:toolbar>
+            <upload:items>
+                <upload:UploadSetItem fileName="{objectModel>fileName}" visibleRemove="false" mediaType="{objectModel>mediaType}" url="{objectModel>url}" enabledEdit="false" visibleEdit="false" openPressed="onOpenPressed" removePressed="onRemovePressed">
+                    
+                </upload:UploadSetItem>
+            </upload:items>
+        </upload:UploadSet>
+        </HBox>
+        <Label class="sapUiSmallMargin" text="Transhipment of cargo permissible:{objectModel>/Check4}"  design="Bold" />
+        <Label class="sapUiSmallMargin" text="Tarpaulin covering required:{objectModel>/Check5}"  design="Bold" />
+        <Label class="sapUiSmallMargin" text="Cargo can be loaded ON DECK:{objectModel>/Check6}"  design="Bold" />
+        
+       
+        
+        </VBox>
+        
+    </Panel>
+    <!-- <Panel class="sapUiSmallMarginTop" visible="{=${objectModel>/Check2}==='Yes'?true:false}">
+    <HBox >
+        <Label class="sapUiSmallMargin" text="Contents are dangerous goods as per IATA DGR / Hazardous as per _____XXXXXX" required="true" design="Bold"/>
+       
+        <upload:UploadSet  mode="None" instantUpload="false" afterItemAdded="onAfterItemAdded" uploadCompleted="onUploadCompleted" uploadUrl="/Adani_Logistics_Packing_Doc/"   items="{
+								path: 'objectModel>/To_CkeckList/',								templateShareable: false}">
+            <upload:toolbar>
+            </upload:toolbar>
+            <upload:items>
+                <upload:UploadSetItem fileName="{objectModel>fileName}" mediaType="{objectModel>mediaType}" url="{objectModel>url}"  enabledEdit="false" visibleEdit="false" openPressed="onOpenPressed" removePressed="onRemovePressed">
+                    
+                </upload:UploadSetItem>
+            </upload:items>
+        </upload:UploadSet>
+    </HBox>
+    </Panel> -->
+
+</mvc:View>

@@ -1,0 +1,12 @@
+<mvc:View
+	controllerName="lrftracker.controller.DeliveryDetails"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<ObjectHeader
+		
+		
+		title="{objectModel>/Lrf_No}"
+		 >
+		
+	</ObjectHeader>
+</mvc:View>

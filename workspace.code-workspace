@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "path": "full_app_main"
+        }
+    ],
+    "settings": {
+        "sqltools.connections": [
+            {
+                "previewLimit": 50,
+                "driver": "SQLite",
+                "name": "db3",
+                "database": "${workspaceFolder:full_app_main}/db.sqlite"
+            }
+        ],
+        "SAP HANA Project Explorer.bind.confirm existing service": false,
+        "SAP HANA Project Explorer.bind.confirm automatic undeployment": false
+    }
+}

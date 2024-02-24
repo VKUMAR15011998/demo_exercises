@@ -1,0 +1,77 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cds-deploy-to-hana-MyHANAApp-jerry",
+      "type": "shell",
+      "command": "cds",
+      "args": [
+        "deploy",
+        "--to",
+        "hana:jerry",
+        "--no-save"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/MyHANAApp"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        "$cap-hdi-bind-handler"
+      ]
+    },
+    {
+      "label": "cds-deploy-logistics11-my.db",
+      "type": "shell",
+      "command": "cds",
+      "args": [
+        "deploy",
+        "--to",
+        "sqlite:my.db",
+        "--no-save"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/logistics11"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        "$cap-sqlite-bind-handler"
+      ]
+    },
+    {
+      "label": "cds-deploy-logistics11-logisticDB.db",
+      "type": "shell",
+      "command": "cds",
+      "args": [
+        "deploy",
+        "--to",
+        "sqlite:logisticDB.db",
+        "--no-save"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/logistics11"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        "$cap-sqlite-bind-handler"
+      ]
+    },
+    {
+      "label": "cds-deploy-logistics11-logistics11.db",
+      "type": "shell",
+      "command": "cds",
+      "args": [
+        "deploy",
+        "--to",
+        "sqlite:logistics11.db",
+        "--no-save"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/logistics11"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        "$cap-sqlite-bind-handler"
+      ]
+    }
+  ]
+}

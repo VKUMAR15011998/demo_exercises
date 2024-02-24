@@ -1,0 +1,62 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormDisplay480_Trial"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			<f:content>
+				<core:Title />
+				
+				<Label text="Requisition Date" />
+				<Text text="{objectModel>/Requ_Date}" />
+				<Label text="PO Number" />
+				<Text text="{objectModel>/PO_Number}" />
+				<Label text="Reference LRF No" />
+				
+				<Text text="{objectModel>/Ref_Lrf_No}" />
+				<Label text="Project" />
+				<Text text="{objectModel>/Project_ID}" />
+				<Label text="Vendor Name" />
+				<Text text="{objectModel>/Vendor_Name}" />
+				<Label text="Name of Initiator" />
+				<Text text="{objectModel>/Initiator_Name}" />
+				
+				
+				
+				<core:Title />
+				<Label text="Mobile" />
+				<Text text="{objectModel>/Country_code} {objectModel>/Mobile_No}" />
+				<Label text="Additional Mobile" />
+				<Text text="{objectModel>/Add_Country_code} {objectModel>/Additional_Mob}" />
+				<Label text="Email ID" />
+				<Text text="{objectModel>/Vendor_Name}" />
+				<Label text="Additional Email ID"></Label>
+								
+									<VBox id="dynamicFieldsContainer" items="{objectModel>/Additional_MailID/}">
+										<items >
+											<Text text="{objectModel>}" />
+											
+										</items>
+									</VBox>
+				
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</core:FragmentDefinition>
