@@ -9,7 +9,10 @@
     "@sap/cds": "^7",
     "@sap/cds-hana": "^2",
     "@sap/hana-client": "^2.19.21",
-    "express": "^4"
+    "@sap/xsenv": "^4.2.0",
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "passport": "^0"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -28,7 +31,8 @@
     "requires": {
       "db": {
         "kind": "hana"
-      }
+      },
+      "auth": "xsuaa"
     }
   },
   "sapux": [
