@@ -7,24 +7,31 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4",
-    "@sap/cds-hana": "^2"
+    "@sap/cds-hana": "^2",
+    "@sap/hana-client": "^2.19.21",
+    "express": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
-    "@sap/cds-dk": "^7"
+    "@sap/cds-dk": "^7",
+    "@sap/hdi-deploy": "4.9.2",
+    "@sap/ux-specification": "^1.120.4"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-hc_off_supplies_ui": "cds watch --open hc_off_supplies_ui/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
-    "hana":{
-      "deploy-format":"hdbtable"
+    "hana": {
+      "deploy-format": "hdbtable"
     },
     "requires": {
       "db": {
         "kind": "hana"
       }
     }
-  }
+  },
+  "sapux": [
+    "app/hc_off_supplies_ui"
+  ]
 }

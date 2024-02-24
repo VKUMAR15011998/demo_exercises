@@ -50,6 +50,27 @@
         "NODE_ENV": "development",
         "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/logistics11\\\",\\\"profileName\\\":\\\"development\\\"}\"}"
       }
+    },
+    {
+      "name": "Run HC_OFF_SUPPLIES-1",
+      "request": "launch",
+      "type": "node",
+      "cwd": "${workspaceFolder}/HC_OFF_SUPPLIES",
+      "runtimeExecutable": "cds",
+      "args": [
+        "serve",
+        "--in-memory?"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "envFile": "${workspaceFolder}/HC_OFF_SUPPLIES/.env1",
+      "env": {
+        "NODE_ENV": "development",
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/HC_OFF_SUPPLIES\\\",\\\"profileName\\\":\\\"development\\\"}\"}"
+      }
     }
   ],
   "inputs": [

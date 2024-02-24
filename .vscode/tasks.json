@@ -72,6 +72,24 @@
       "problemMatcher": [
         "$cap-sqlite-bind-handler"
       ]
+    },
+    {
+      "label": "cds-deploy-to-hana-HC_OFF_SUPPLIES-HC_OFF_SUPPLIES-db",
+      "type": "shell",
+      "command": "cds",
+      "args": [
+        "deploy",
+        "--to",
+        "hana:HC_OFF_SUPPLIES-db",
+        "--no-save"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/HC_OFF_SUPPLIES"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        "$cap-hdi-bind-handler"
+      ]
     }
   ]
 }

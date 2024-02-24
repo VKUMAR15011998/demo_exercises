@@ -7,3 +7,5 @@ MyHANAApp/gen/db/.env
 e_Logistics/db/.env
 # auto generated wildcard
 MyHANAApp/.env1
+# auto generated wildcard
+HC_OFF_SUPPLIES/.env1
